@@ -12,6 +12,12 @@ Operator that manages KubeVirt
 
 ### Dependencies
 
+Get dep if you don't have it
+
+```bash
+go get -u github.com/golang/dep/cmd/dep
+```
+
 Checkout the project and its dependencies:
 
 ```bash
@@ -31,3 +37,9 @@ make dep
 
 ### Launch the Operator
 ```make deploy```
+
+You will see
+- a kubevirt-operator pod in your current namespace
+- kubevirt components in the kube-system namespace
+- a new custom resource definition (crd) called `virtualization.virt.kubevirt.io`
+- an instance of this crd called `kubevirt` in your current namespace
